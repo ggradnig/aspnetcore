@@ -173,7 +173,8 @@
   -->
 
   <Target Name="_TieInGenerateOpenApiCode"
-      BeforeTargets="BeforeCompile"
-      Condition=" '$(OpenApiGenerateCodeOnBuild)' == 'true' AND ('$(TargetFramework)' == '' OR '$(TargetFrameworks)' == '') "
-      DependsOnTargets="GenerateOpenApiCode" />
+          BeforeTargets="BeforeCompile"
+          Condition=" '$(OpenApiGenerateCodeOnBuild)' == 'true' AND '$(TargetFrameworks)' == ''"
+          DependsOnTargets="GenerateOpenApiCode" />
+
 </Project>

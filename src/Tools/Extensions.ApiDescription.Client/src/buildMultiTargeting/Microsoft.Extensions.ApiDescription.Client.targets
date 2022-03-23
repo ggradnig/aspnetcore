@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Project>
   <ItemGroup>
     <PropertyPageSchema Include="../build/OpenApiItemsSchema.xaml">
@@ -14,7 +14,8 @@
   </Target>
 
   <Target Name="_GenerateOpenApiCode"
-      BeforeTargets="BeforeCompile"
-      Condition=" ''$(OpenApiGenerateCodeOnBuild)' == 'true' "
-      DependsOnTargets="GenerateOpenApiCode" />
+          BeforeTargets="DispatchToInnerBuilds"
+          Condition="'$(OpenApiGenerateCodeOnBuild)' == 'true'"
+          DependsOnTargets="GenerateOpenApiCode" />
+  
 </Project>
